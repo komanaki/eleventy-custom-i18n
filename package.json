@@ -1,0 +1,11 @@
+{
+  "name": "eleventy-custom-i18n",
+  "version": "1.0.0",
+  "description": "Custom config to have i18n with Eleventy for my portfolio",
+  "main": ".eleventy.js",
+  "author": "komanaki@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}

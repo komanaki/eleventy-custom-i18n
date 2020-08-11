@@ -1,0 +1,17 @@
+---
+layout: layout.njk
+locale: en
+permalink: '{% getPermalink locale, page.filePathStem, page.fileSlug %}'
+title: Games
+navactive: games
+---
+
+<p>Games list in EN</p>
+<ul>
+{% for game in collections.games_en %}
+<li>
+	<img src="{{ (game.url+'thumbnail.png')|removelang }}">
+	<a href="{{ game.url|url }}">{{ game.data.title }}</a>
+</li>
+{% endfor %}
+</ul>

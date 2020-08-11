@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="{{ '/static/main.css'|url }}">
+	<title>Eleventy i18n</title>
+</head>
+<body lang="{{ locale }}">
+
+	<header>
+		<h1><a href="{{ '/'|locurl(locale) }}">Eleventy i18n</a></h1>
+		<ul>
+			<li {% if navactive == 'games' %}class="active"{% endif %}>
+				<a href="{{ '/games/'|locurl(locale) }}"><span>Games</span></a>
+			</li>
+			<li {% if navactive == 'ui-design' %}class="active"{% endif %}>
+				<a href="{{ '/ui-design/'|locurl(locale) }}"><span>UI Design</span></a>
+			</li>
+		</ul>
+		<ul>
+			<li {% if locale == 'fr' %}class="active"{% endif %}>
+				<a href="{{ page.url|locurl('fr') }}" hreflang="fr">Français</a>
+			</li>
+			<li {% if locale == 'en' %}class="active"{% endif %}>
+				<a href="{{ page.url|locurl('en') }}" hreflang="en">English</a>
+			</li>
+			<li {% if locale == 'jp' %}class="active"{% endif %}>
+				<a href="{{ page.url|locurl('jp') }}" hreflang="jp">日本語</a>
+			</li>
+		</ul>
+	</header>
+
+	<main>
+		{{ content | safe }}
+	</main>
+</body>

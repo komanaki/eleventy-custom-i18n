@@ -1,3 +1,6 @@
+# Eleventy built files
+_site/
+
 # Logs
 logs
 *.log
